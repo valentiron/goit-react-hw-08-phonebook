@@ -1,0 +1,14 @@
+.home {
+    min-height: 85vh;
+    text-align: center;
+    color: var(--dark-txt-color);
+}
+
+.title {
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+.text {
+    margin-bottom: 40px;
+}

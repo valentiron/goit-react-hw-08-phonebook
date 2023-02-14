@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
+import css from './HomeAuth.module.css'
 
 const HomeAuth = () => {
 return (
-    <div>
-        <NavLink to='/register'>
+    <div className={css.nav}>
+        <NavLink className={css.link} to='/register'>
             Register
         </NavLink>
-        <NavLink to='/login'>
+        <NavLink className={css.link} to='/login'>
             Log In
         </NavLink>
     </div>

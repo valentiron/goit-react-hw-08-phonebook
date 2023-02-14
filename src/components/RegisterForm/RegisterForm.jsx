@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operations';
 import Footer from '../Footer/Footer';
+import css from './RegisterForm.module.css'
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ const RegisterForm = () => {
   return (
     <>
       <Box
+      className={css.form}
         component="form"
         sx={{
           '& .MuiTextField-root': { m: 1, width: '25ch' },
@@ -34,21 +36,20 @@ const RegisterForm = () => {
         onSubmit={handleSubmit}
         autoComplete="off"
       >
-        <TextField label="Username" type="text" name="name" />
+        <TextField  label="Username" type="text" name="name" />
         <TextField
           label="Email"
           type="email"
           name="email"
-          autoComplete="current-password"
+          
         />
         <TextField
           label="Password"
           type="password"
           name="password"
-          
-          autoComplete="current-password"
+        
         />
-        <button type='submit' variant='contained' color='primary'>Register</button>
+        <button className={css.btn} type='submit' variant='contained' color='primary'>Register</button>
       </Box>
       <Footer/>
     </>

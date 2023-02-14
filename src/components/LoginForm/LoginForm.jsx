@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/operations';
 import TextField from '@mui/material/TextField';
 import Footer from '../Footer/Footer';
+import css from './LoginForm.module.css'
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const LoginForm = () => {
 
   return (
     <>
-      <Box
+      <Box className={css.form}
         component="form"
         sx={{
           '& .MuiTextField-root': { m: 1, width: '25ch' },
@@ -34,20 +35,22 @@ const LoginForm = () => {
         autoComplete="off"
       >
         <TextField
+        className={css.input}
           label="Email"
           type="email"
           name="email"
           autoComplete="current-email"
         />
         <TextField
+        className={css.input}
           label="Password"
           type="password"
           name="password"
           autoComplete="current-password"
         />
-        <button type="submit">Log In</button>
-        <Footer />
+        <button className={css.btn} type="submit">Log In</button>
       </Box>
+      <Footer />
     </>
   );
 };

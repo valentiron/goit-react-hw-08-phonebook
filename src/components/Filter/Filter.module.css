@@ -1,0 +1,28 @@
+.label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 40px;
+
+}
+
+.description {
+    font-weight: 700;
+}
+
+.input {
+    width: 400px;
+    height: 40px;
+    padding: 0 8px;
+    font-size: 15px;
+    line-height: 1.17;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 6px;
+    transition: border-color 250ms var(--main-animation);
+}
+
+.input:hover,
+.input:focus {
+    border-color: var(--border-color);
+}

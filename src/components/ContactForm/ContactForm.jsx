@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from '../../redux/contacts/selectors';
 import { Notify } from 'notiflix';
 import { addContact } from '../../redux/contacts/operations';
+import css from './ContactForm.module.css'
 
 Notify.init({
   width: '320px',
@@ -35,10 +36,10 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        <span>Name</span>
-        <input
+    <form className={css.form} onSubmit={handleSubmit}>
+      <label className={css.label}>
+        <span className={css.title}>Name</span>
+        <input className={css.input}
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -46,9 +47,9 @@ export default function ContactForm() {
           required
         />
       </label>
-      <label>
-        <span>Number</span>
-        <input
+      <label className={css.label}>
+        <span className={css.title}>Number</span>
+        <input className={css.input}
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -56,7 +57,7 @@ export default function ContactForm() {
           required
         />
       </label>
-      <button type='submit'>Add contact</button>
+      <button className={css.btn} type='submit'>Add contact</button>
     </form>
   );
 }
