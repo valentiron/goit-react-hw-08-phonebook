@@ -2,7 +2,7 @@ import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './Layout/Layout';
-import Loader from './Loader/Loader';
+import Loader from './Loader/Loader'
 import useAuth from '../hooks/useAuth';
 import { refreshUser } from '../redux/auth/operations';
 import { PrivateRoute } from './PrivateRoute';
@@ -22,7 +22,7 @@ export default function App() {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
+  return isRefreshing ? (<Loader />) : (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
